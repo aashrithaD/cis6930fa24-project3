@@ -18,6 +18,7 @@ pipenv run python -m pytest -v
 
 ## Project Demo
 
+[![Video Title](https://img.youtube.com/vi/6QddLXCIe-w/0.jpg)](https://www.youtube.com/watch?v=6QddLXCIe-w)
 
 ## Functions
 
@@ -111,3 +112,4 @@ Returns: A list of dictionaries, each containing incident details extracted from
 4. URLs provided by users are assumed to be well-formed and contain valid PDF links. The system expects one URL per line in the provided input.
 5. The system assumes that all incident reports follow the same date format (MM/DD/YYYY), ensuring correct date extraction and filtering.
 6. It is assumed that users can provide both URLs and PDF files at once. 
+7. Assumes that the user can choose different fields for visualizations, based on their requirements. While the current graphs are plotted for specific fields, other fields can also be plotted as per the user's preference for deeper analysis.
