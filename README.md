@@ -3,9 +3,7 @@
 Name: AASHRITHA REDDY DONAPATI
 
 # Assignment Description
-This project focuses on creating a web application that extracts, parses, and visualizes data from incident reports (in PDF format) using Flask. The primary objective is to enable users to upload multiple PDF files or provide URLs of incident reports, and in turn, generate various visualizations, including clustering, bar charts, and pie charts, based on the extracted incident data.
-
-The application processes the incident data by extracting key details such as incident number, location, nature of the incident, and timestamp, and uses this information to generate visualizations that offer valuable insights into incident patterns and trends.
+This project focuses on creating a web application that extracts, parses, and visualizes data from incident reports (in PDF format) using Flask. The primary objective is to enable users to upload multiple PDF files or provide URLs of incident reports, and in turn, generate various visualizations, including clustering, bar charts, and pie charts, based on the extracted incident data. The application processes the incident data by extracting key details such as incident number, location, nature of the incident, and timestamp, and uses this information to generate visualizations that offer valuable insights into incident patterns and trends.
 
 # How to install
 To install the required dependencies:  pipenv install
