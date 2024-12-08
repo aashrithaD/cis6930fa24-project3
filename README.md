@@ -26,73 +26,63 @@ pipenv run python -m pytest -v
 ## main.py
 
 1. is_allowed_file(filename):
-
+```sh
 Process: Checks if the uploaded file has a valid PDF extension.
 Returns: True if the file is a PDF, False otherwise.
-
+```
 2. download_pdf_from_url(url):
-
+```sh
 Process: Downloads the PDF file from a given URL and saves it locally in the "static/uploads" folder.
 Returns: The local path of the saved PDF file.
-
+```
 3. create_folder_if_not_exists(directory):
-
+```sh
 Process: Creates a folder if it does not exist. This ensures the "static/uploads" directory is available to store the uploaded files.
 Returns: None.
-
+```
 4. index():
-
+```sh
 Process: Renders the homepage (index.html) where users can upload PDF files or provide URLs for incident reports.
 Returns: The HTML page for the main interface.
-
+```
 5. upload_files():
-
+```sh
 Process: Handles the POST request for file uploads. It processes both uploaded PDF files and URLs. For each PDF (either uploaded or downloaded from a URL), the text is extracted, parsed into incident records, and visualizations are generated.
 Returns: Renders the visualizations.html template displaying the generated clustering image, comparison chart, and pie chart.
-
+```
 ## clustering.py
 
-6. generate_incident_clustering()
-Process:
-Clusters incident data based on the frequency of each incident type (nature) using KMeans and generates a scatter plot to visualize the clustering.
-
-Returns:
-The file path of the saved clustering plot image (static/graphs/clustering.png).
-
+6. generate_incident_clustering():
+```sh
+Process: Clusters incident data based on the frequency of each incident type (nature) using KMeans and generates a scatter plot to visualize the clustering.
+Returns: The file path of the saved clustering plot image (static/graphs/clustering.png).
+```
 ## comparision.py
 
-7. generate_location_comparison()
-Process:
-Generates a bar chart comparing the count of incidents by location. It first counts the incidents per location and then visualizes the result in a bar chart. The chart is saved as an image for display.
-
-Returns:
-The file path of the saved comparison plot image (static/graphs/comparison.png).
-
+7. generate_location_comparison():
+```sh
+Process: Generates a bar chart comparing the count of incidents by location. It first counts the incidents per location and then visualizes the result in a bar chart. The chart is saved as an image for display.
+Returns: The file path of the saved comparison plot image (static/graphs/comparison.png).
+```
 ## pie_chart.py
 
-8. generate_nature_pie_chart()
-Process:
-Generates a pie chart visualizing the distribution of incidents by their nature. It first counts the occurrences of each unique nature in the incident data, and then creates a pie chart to represent this distribution. The chart is saved as an image for display.
-
-Returns:
-The file path of the saved pie chart image (static/graphs/custom.png).
-
+8. generate_nature_pie_chart():
+```sh
+Process: Generates a pie chart visualizing the distribution of incidents by their nature. It first counts the occurrences of each unique nature in the incident data, and then creates a pie chart to represent this distribution. The chart is saved as an image for display.
+Returns: The file path of the saved pie chart image (static/graphs/custom.png).
+```
 ## utils.py
 
-9. extract_text_from_pdf()
-Process:
-Extracts text from a PDF file, filtering lines that contain date information in the format MM/DD/YYYY. The text is extracted from each page of the PDF, and only lines containing dates are retained for further processing.
-
-Returns:
-A list of extracted text lines from the PDF, filtered by the presence of a date.
-
-10. parse_incident_data()
-Process:
-Parses the extracted text into structured incident data. It splits each line based on multiple spaces and extracts relevant details such as date_time, incident_number, location, nature, and incident_ori into a dictionary format.
-
-Returns:
-A list of dictionaries, each containing incident details extracted from the text.
-
+9. extract_text_from_pdf():
+```sh
+Process: Extracts text from a PDF file, filtering lines that contain date information in the format MM/DD/YYYY. The text is extracted from each page of the PDF, and only lines containing dates are retained for further processing.
+Returns: A list of extracted text lines from the PDF, filtered by the presence of a date.
+```
+10. parse_incident_data():
+```sh
+Process: Parses the extracted text into structured incident data. It splits each line based on multiple spaces and extracts relevant details such as date_time, incident_number, location, nature, and incident_ori into a dictionary format.
+Returns: A list of dictionaries, each containing incident details extracted from the text.
+```
 ## test_app.py
 
 1. setUp(): The setUp() function is part of the test preparation process. It runs before each test method and initializes the testing environment. In this case, it sets up the Flask app’s test client, enabling interaction with the app during tests. It also creates the static/uploads folder if it doesn't already exist, ensuring a directory is available for file uploads during the tests.
