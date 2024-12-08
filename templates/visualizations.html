@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Visualizations</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0; text-align: center;">
+
+    <div style="background-color: #333; color: white; padding: 30px;">
+        <h1>Incident Visualizations</h1>
+        <p style="font-size: 1.2em;">Here are the visualizations based on the data from your uploaded files.</p>
+    </div>
+
+    <div style="max-width: 1000px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        
+        <!-- Display File Names (Uploaded PDFs) -->
+        {% if file_names %}
+        <h3>Uploaded PDF Files:</h3>
+        <ul>
+            {% for file in file_names %}
+                <li>{{ file }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        <!-- Display URLs -->
+        {% if url_list %}
+        <h3>Uploaded URLs:</h3>
+        <ul>
+            {% for url in url_list %}
+                <li>{{ url }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        <h2>Clustering of Incidents</h2>
+        <img src="{{ clustering_image }}" alt="Clustering" style="max-width: 100%; height: auto; margin-bottom: 40px;">
+        
+        <h2>Bar chart of incidents by location</h2>
+        <img src="{{ comparison_image }}" alt="Incident Comparison" style="max-width: 100%; height: auto; margin-bottom: 40px;">
+        
+        <h2>Pie Chart of incidents by nature</h2>
+        <img src="{{ custom_image }}" alt="pie chart Visualization" style="max-width: 100%; height: auto;">
+    </div>
+
+    <!-- Upload Again Button -->
+    <div style="margin-top: 50px;">
+        <a href="/" style="background-color: #4CAF50; color: white; padding: 15px 32px; font-size: 1.2em; text-decoration: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+            Upload Again
+        </a>
+    </div>
+
+</body>
+</html>

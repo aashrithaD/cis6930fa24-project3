@@ -1,0 +1,7 @@
+Flask Documentation | https://flask.palletsprojects.com/en/2.0.x/ | Helped me understand how to build and manage the web framework, handle HTTP requests, and render templates.
+
+Plotly Express Documentation | https://plotly.com/python/plotly-express/ | Guided me in creating interactive and visually appealing charts like bar charts, scatter plots, and pie charts for data visualization
+
+sklearn KMeans Clustering Documentation | https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html | Provided the method to implement clustering in the data based on incident nature counts, helping with data segmentation and visualization.
+
+Pytest Documentation | https://docs.pytest.org/en/stable/ | Provided the framework to write unit tests for Flask routes, data processing, and visualization generation.
